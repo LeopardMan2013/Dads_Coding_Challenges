@@ -22,8 +22,16 @@ library = [
 ]
 
 def view_library():
-    print("\nLibrary Books:")
-    print("\nnot yet implemented")
+    print("\nLibrary Books:\n")
+    for book in library:
+        if book['borrowed']:
+            av = 'no'
+        else:
+            av = 'yes'
+        print(f"Title: {book['title']}\n"
+              f"Author: {book['author']}\n"
+              f"Available: {av}\n")
+
 
 def borrow_book(title):
     print("\nnot yet implemented")
@@ -49,8 +57,7 @@ def main():
         
         if choice.lower() == 'q':
             print("\nThank you for using the Library Management System. Goodbye!")
-            break
-            
+            break    
         if choice == '1':
             view_library()
         elif choice == '2':

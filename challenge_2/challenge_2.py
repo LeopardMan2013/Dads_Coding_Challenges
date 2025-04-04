@@ -8,6 +8,5 @@ while n < 100:
 
 print(d)
 
-
 for key, value in d.items():
     print(f"Key: {key} Value: {value}")
