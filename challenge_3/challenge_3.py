@@ -21,4 +21,50 @@ library = [
     {"title": "The Alchemist", "author": "Paulo Coelho", "borrowed": False},
 ]
 
-print(library)
+def view_library():
+    print("\nLibrary Books:")
+    print("\nnot yet implemented")
+
+def borrow_book(title):
+    print("\nnot yet implemented")
+
+def add_book(book):
+    print("\nnot yet implemented")
+
+def remove_book(title):
+    print("\nnot yet implemented")
+
+def display_menu():
+    print("\nLibrary Management System")
+    print("1. View Library")
+    print("2. Borrow a Book")
+    print("3. Add a Book")
+    print("4. Remove a Book")
+    print("Q. Quit")
+    return input("\nEnter your choice: ")
+
+def main():
+    while True:
+        choice = display_menu()
+        
+        if choice.lower() == 'q':
+            print("\nThank you for using the Library Management System. Goodbye!")
+            break
+            
+        if choice == '1':
+            view_library()
+        elif choice == '2':
+            title = input("Enter the title of the book to borrow: ")
+            borrow_book(title)
+        elif choice == '3':
+            title = input("Enter the title of the book: ")
+            author = input("Enter the author's name: ")
+            add_book({"title": title, "author": author, "borrowed": False})
+        elif choice == '4':
+            title = input("Enter the title of the book to remove: ")
+            remove_book(title)
+        else:
+            print("\nInvalid choice. Please try again.\n")
+
+if __name__ == "__main__":
+    main()
