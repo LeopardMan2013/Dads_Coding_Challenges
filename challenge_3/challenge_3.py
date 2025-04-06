@@ -32,10 +32,23 @@ def view_library():
               f"Author: {book['author']}\n"
               f"Available: {av}\n")
 
-
 def borrow_book(title):
-    print("\nnot yet implemented")
-
+    book_found = False
+    book = dict() 
+    for _book in library:
+        if _book['title'] == title:
+            book_found = True
+            book = _book
+            break
+    if book_found:
+        if book['borrowed']:
+            print("Sorry this book is borrowed, you can not borrow it.")
+        else:
+            book['borrowed'] = True
+            print(f'You have successfully borrowed {title}')
+    else:
+        print(f'Sorry we do not have {title}')
+        
 def add_book(book):
     print("\nnot yet implemented")
 
@@ -75,3 +88,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
