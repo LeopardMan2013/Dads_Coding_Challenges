@@ -50,7 +50,7 @@ def borrow_book(title):
         print(f'Sorry we do not have {title}')
         
 def add_book(book):
-    print("\nnot yet implemented")
+    library.append(book)
 
 def remove_book(title):
     print("\nnot yet implemented")
