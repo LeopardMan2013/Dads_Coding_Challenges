@@ -53,7 +53,18 @@ def add_book(book):
     library.append(book)
 
 def remove_book(title):
-    print("\nnot yet implemented")
+    book_found = False
+    book = dict() 
+    for _book in library:
+        if _book['title'] == title:
+            book_found = True
+            book = _book
+            break
+    if book_found:
+        library.remove(book)
+        print(f'You have successfully removed {title} from the library')
+    else:
+        print(f'Sorry we do not have {title}, so you can\'t remove it')
 
 def display_menu():
     print("\nLibrary Management System")
